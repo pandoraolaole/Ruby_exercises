@@ -60,7 +60,7 @@ class Tester < Employee
     def calc_salary
         salary = @@base_salary * @working_time
         salary += salary*0.1
-        return  salary
+        salary
     end 
 end
 
@@ -72,7 +72,7 @@ class QA < Employee
         @ot_time = ot_time
     end
     def request_ot
-        return  @@base_salary * @ot_time *1.5
+        @@base_salary * @ot_time *1.5
     end 
     def info()
         super

@@ -1,10 +1,10 @@
 require './Employee.rb'
-$em_list = Array.new
+$emp_list = Array.new
 def init_list()
-    $em_list << Dev.new(1, "Tran Van Trong",8,2)
-    $em_list << QA.new(2, "Nguyen Thi Trong",5,3)
-    $em_list << Tester.new(3, "Tran Xuan Trong",8)
-    $em_list << Employee.new(4, "Hoang Trong",1,"BO")
+    $emp_list << Dev.new(1, "Tran Van Trong",8,2)
+    $emp_list << QA.new(2, "Nguyen Thi Trong",5,3)
+    $emp_list << Tester.new(3, "Tran Xuan Trong",8)
+    $emp_list << Employee.new(4, "Hoang Trong",1,"BO")
 end 
 
 while true do
@@ -22,18 +22,18 @@ while true do
     else
         case option
         when "1"
-            if $em_list.empty? then
+            if $emp_list.empty? then
                 init_list()
                 puts "Khoi tao DS nhanh vien thanh cong!"
             else    
                 puts "DS da ton tai!"
             end
         when "2"
-            $em_list.each do |i|
+            $emp_list.each do |i|
                 i.info()
             end
         when "3"
-            $em_list.each do |i|
+            $emp_list.each do |i|
                 if i.calc_salary > 5000 then
                     ot=""
                     ot = " ,OT: #{i.request_ot()}" if i.class.method_defined?(:request_ot) 
@@ -61,7 +61,7 @@ while true do
                         wt = gets.chomp
                         puts "OT: "
                         ot = gets.chomp
-                        $em_list << Dev.new(id,name,wt.to_i,ot.to_i)
+                        $emp_list << Dev.new(id,name,wt.to_i,ot.to_i)
                     when "2"
                         puts "ID: "
                         id = gets.chomp
@@ -69,7 +69,7 @@ while true do
                         name = gets.chomp
                         puts "Working time: "
                         wt = gets.chomp
-                        $em_list << Tester.new(id,name,wt.to_i)
+                        $emp_list << Tester.new(id,name,wt.to_i)
                     when "3"
                         puts "ID: "
                         id = gets.chomp
@@ -79,7 +79,7 @@ while true do
                         wt = gets.chomp
                         puts "OT: "
                         ot = gets.chomp
-                        $em_list << QA.new(id,name,wt.to_i,ot.to_i)
+                        $emp_list << QA.new(id,name,wt.to_i,ot.to_i)
                     when "4"
                         puts "ID: "
                         id = gets.chomp
@@ -89,7 +89,7 @@ while true do
                         wt = gets.chomp
                         puts "Department: "
                         dp = gets.chomp
-                        $em_list << Employee.new(id,name,wt.to_i,dp)
+                        $emp_list << Employee.new(id,name,wt.to_i,dp)
                     end 
                 end  
             end  
