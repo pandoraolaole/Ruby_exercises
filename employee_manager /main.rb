@@ -8,11 +8,13 @@ def init_list()
 end 
 
 while true do
+    puts "-------------------------------"
     puts "\t1. Khoi tao ds nhan vien"
     puts "\t2. Toan bo nhan vien"
     puts "\t3. Nhan vien co luong > 5000"
     puts "\t4. Them nhan vien"
     puts "\tx. Exit"
+    puts "-------------------------------"
     puts "Nhap lua chon: "
     option = gets.chomp
     if option =="x" then
